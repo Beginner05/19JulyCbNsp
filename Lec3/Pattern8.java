@@ -1,38 +1,21 @@
 package Lec3;
-
+import java.util.Scanner;
 public class Pattern8 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-int n=11;
-int nsp1=0;
-int nsp2=n-2;
-for(int row=0;row<n;row++)
+public static void main(String args[])
 {
-	for(int csp=0;csp<nsp1;csp++)
+	
+	Scanner scn=new Scanner(System.in);
+	int arr[]=new int[10];
+	int max=Integer.MIN_VALUE;
+	int min=Integer.MAX_VALUE;
+	for(int i=0;i<arr.length;i++)
 	{
-		System.out.print("  ");
+		arr[i]=scn.nextInt();
+	 max=Math.max(max, arr[i]);
+	min=Math.min(min,arr[i]);
 	}
-	System.out.print("* ");
-	for(int csp=0;csp<nsp2;csp++)
-	{
-		System.out.print("  ");
-	}
-	if(row!=n/2)
-	System.out.print("* ");
-if(row<n/2)
-{
-	nsp1++;
-	nsp2-=2;
+	System.out.println(min);
+	System.out.println(max);
 }
-else {
-	nsp1--;
-	nsp2+=2;
 }
-System.out.println();
-}
-	}
-}
-
-
-
