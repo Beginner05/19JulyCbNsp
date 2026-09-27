@@ -7,12 +7,7 @@ public class Leetcode_179 {
 
 		int arr[] = { 3, 5, 9, 34, 30 };
 		String ans=sol(arr);
-		String s="ABC";
-		for(int i=0;i<s.length();i++)
-		{
-			int a=s.charAt(i);
-			System.out.println(a);
-		}
+		
 System.out.println(ans);
 	}
 
@@ -31,6 +26,7 @@ System.out.println(ans);
 			}
 		}
 		String ans="";
+		if(arr[0]==0)return "0";
 		for(int i=0;i<arr.length;i++)
 		{
 			ans=ans+arr[i];
