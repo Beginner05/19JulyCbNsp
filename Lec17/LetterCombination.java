@@ -1,13 +1,18 @@
 package Lec17;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LetterCombination {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		sol("962", "");
+		List<String>res=new ArrayList();
+		
+		sol("962", "",res);
 	}
 
-	public static void sol(String str, String ans) {
+	public static void sol(String str, String ans,List<String>res) {
 		if (str.length() == 0) {
 			System.out.println(ans);
 			return;
@@ -15,7 +20,7 @@ public class LetterCombination {
 		char ch = str.charAt(0);
 		String s = get(ch);
 		for (int i = 0; i < s.length(); i++) {
-			sol(str.substring(1), ans + s.charAt(i));
+			sol(str.substring(1), ans + s.charAt(i),res);
 		}
 
 	}
