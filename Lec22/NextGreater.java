@@ -1,0 +1,58 @@
+package Lec22;
+import java.util.Stack;
+public class NextGreater {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int arr[] = { 7, 4, 5, 18, 9 };
+		int res[] = sol(arr);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(res[i] + " ");
+		}
+	}
+public static int[]  solOpt(int arr[])
+{
+	
+	int res[]=new int[arr.length];
+	Stack<Integer>s=new Stack();
+	for(int i=0;i<arr.length;i++)
+	{
+		while(s.isEmpty()==false&&arr[s.peek()]<arr[i])
+		{
+			res[s.pop()]=arr[i];
+		}
+	
+		s.push(i);
+	}
+	
+	while(s.isEmpty()==false)
+	{
+		res[s.pop()]=-1;
+	}
+	
+	return res;
+	
+	
+	
+}
+	public static int[] sol(int arr[]) {
+		int res[] = new int[arr.length];
+		for (int i = 0; i < arr.length; i++) {
+			int j = i + 1;
+			for (; j < arr.length; j++) {
+				if (arr[i] < arr[j]) {
+					res[i] = arr[j];
+					break;
+				}
+
+			}
+			if (j == arr.length) {
+				res[i] = -1;
+			}
+
+		}
+		return res;
+	}
+
+}
